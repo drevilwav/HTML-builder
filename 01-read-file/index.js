@@ -1,0 +1,9 @@
+const fs = require('fs');
+const path = require('path');
+
+const filePath = path.join(__dirname, 'text.txt');
+const stream = fs.createReadStream(filePath, 'utf-8');
+
+stream.on('data', (data) => {
+  process.stdout.write(data);
+});
